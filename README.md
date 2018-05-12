@@ -69,7 +69,7 @@ add_executable(
 #   ...
 )
 
-target_link_library(
+target_link_libraries(
     MyProg
     PRIVATE
         Split::SplitLibrary
