@@ -1,4 +1,4 @@
-### Split
+## Split
 A simple, lightweight library for splitting strings. The
 splitting is done without any allocations. It uses `std`
 compatible iterators.
@@ -41,7 +41,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/tmp/split ..
 cmake --build . --target install
 ```
 
-*NOTE: I've used a temporary path as the install
+*NOTE: This example uses a temporary path as the install
 location (`/tmp/split`). You can replace this with
 whatever path is appropriate for your platform*
 
