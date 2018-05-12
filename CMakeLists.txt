@@ -5,8 +5,18 @@ project(Split CXX)
 add_subdirectory(include)
 add_subdirectory(src)
 
-add_subdirectory(submodules/catch)
-add_subdirectory(tests)
+set(SPLIT_ENABLE_TESTS 
+    OFF
+    CACHE 
+    BOOL 
+    "Build the unit tests along with the library"
+)
+
+if(SPLIT_ENABLE_TESTS)
+    enable_testing()
+    add_subdirectory(submodules/catch)
+    add_subdirectory(tests)
+endif()
 
 install(
     EXPORT 

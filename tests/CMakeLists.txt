@@ -1,5 +1,3 @@
-enable_testing()
-
 set(SplitTestSources
     main.cpp
     split_tests.cpp
