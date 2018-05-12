@@ -44,7 +44,7 @@ namespace split {
         SplitIterator(Slice range, Slice needle = NONE);
         auto operator++() -> SplitIterator&;
         auto operator++(int) -> SplitIterator;
-        auto operator*() const -> reference&;
+        auto operator*() const -> reference;
         auto operator->() const -> pointer;
 
         friend auto operator==(SplitIterator const& lhs,
