@@ -18,7 +18,7 @@ namespace split {
         auto operator!=(Slice const& other) const -> bool;
 
         constexpr auto size() const -> size_t {
-            return start - end;
+            return end - start;
         }
 
         char const* start;
