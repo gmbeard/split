@@ -58,17 +58,18 @@ auto SplitIterator::operator++() -> SplitIterator& {
         return *this;
     }
 
+    assert((current_.end + needle_size) < end_);
+
     current_.start = current_.end + needle_size;
     current_.end = 
         std::search(current_.start, end_,
                     needle_.start, needle_.end);
-    
     return *this;
 }
 
 auto SplitIterator::operator++(int) -> SplitIterator {
     auto tmp = *this;
-    ++(*this);
+    operator++();
     return tmp;
 }
 
@@ -111,7 +112,7 @@ auto split::operator!=(SplitIterator const& lhs,
     return !(lhs == rhs);
 }
 
-auto split::split(std::string const& h, std::string const& n)
+auto split::split(std::string& h, std::string& n)
     -> SplitResult
 {
     return split(h.c_str(), n.c_str());

@@ -73,7 +73,7 @@ namespace split {
         SplitIterator last_;
     };
 
-    auto split(std::string const& haystack, std::string const& needle)
+    auto split(std::string& haystack, std::string& needle)
         -> SplitResult;
 
     auto split(char const* haystack, char const* needle)

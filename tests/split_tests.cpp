@@ -1,6 +1,6 @@
 #include "split/split.hpp"
-
 #include "catch.hpp"
+#include <iostream>
 
 TEST_CASE("Split", "[split]") {
 
@@ -68,5 +68,12 @@ TEST_CASE("Split", "[split]") {
         REQUIRE(values[1] == " 2");
         REQUIRE(values[2] == " 3");
         REQUIRE(values[3] == " 4");
+    }
+
+    SECTION("Split an IPv4 address") {
+        std::string ip = "1.0.0.1";
+
+        auto r = split::split(ip.c_str(), ".");
+        REQUIRE(r.size() == 4);
     }
 }
